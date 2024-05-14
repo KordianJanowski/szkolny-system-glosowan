@@ -1,0 +1,5 @@
+pgdata
+.env
+./smart_contract/.env
+./frontend/.env
+./backend/.env
