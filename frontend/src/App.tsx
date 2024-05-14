@@ -5,7 +5,6 @@ import Cookies from 'js-cookie'
 import { ethereum } from "./smart_contract"
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { VotingSystemContract } from "./smart_contract/services"
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
