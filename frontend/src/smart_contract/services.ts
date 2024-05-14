@@ -39,6 +39,7 @@ class VotingSystemClass {
   public async addVote (voting_id: number, option: number, hash: string): Promise<void> {
     const contract = await createEthereumContract();
     await contract.addVote(voting_id, option, import.meta.env.VITE_HASH);
+    hash;
   }
 
   public async getVoterVotingsIds (): Promise<BigInt[]> {
