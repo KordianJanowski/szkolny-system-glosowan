@@ -1,14 +1,14 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { SignInDto } from './dto/sign-in.dto';
-import { LibrusAccountInfo, SignInResponse } from 'src/librus-auth/librus.types';
+import { LibrusAccountInfo, SignInResponse } from '../librus-auth/librus.types';
 import Librus from '../librus-auth/librus-client'
-import { errorResponseLibrus } from 'src/librus-auth/librus-error-response';
-import { schoolSymbol } from 'src/utils/constants/school';
+import { errorResponseLibrus } from '../librus-auth/librus-error-response';
+import { schoolSymbol } from '../utils/constants/school';
 import { JwtService } from '@nestjs/jwt';
-import { UsersService } from 'src/users/users.service';
-import { User } from 'src/users/entities/user.entity';
-import { Role } from 'src/roles/role.enum';
-import { CreateUserDto } from 'src/users/dto/create-user.dto';
+import { UsersService } from '../users/users.service';
+import { User } from '../users/entities/user.entity';
+import { Role } from '../roles/role.enum';
+import { CreateUserDto } from '../users/dto/create-user.dto';
 import { Payload } from './auth.types';
 
 @Injectable()

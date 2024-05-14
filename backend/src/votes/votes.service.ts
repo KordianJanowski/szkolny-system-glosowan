@@ -3,8 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Vote } from './entities/vote.entity';
 import { CreateVoteDto } from './dto/create-vote.dto';
-import { UsersService } from 'src/users/users.service';
-import { VotingsService } from 'src/votings/votings.service';
+import { UsersService } from '../users/users.service';
+import { VotingsService } from '../votings/votings.service';
 
 @Injectable()
 export class VotesService {

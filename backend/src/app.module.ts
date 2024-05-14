@@ -21,18 +21,13 @@ import { RolesGuard } from './roles/roles.guard';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'db',
-      port: 5432,
-      username: process.env.POSTGRES_USERNAME,
-      password: process.env.POSTGRES_DATABASE,
-      database: process.env.POSTGRES_PASSWORD,
       entities: [User, Vote, Voting],
       synchronize: true,
-      autoLoadEntities: true,
+      url: process.env.DATABASE_URL
     }),
-    VotingsModule, 
-    VotesModule, 
-    UsersModule, 
+    VotingsModule,
+    VotesModule,
+    UsersModule,
     AuthModule
   ],
   controllers: [AppController],

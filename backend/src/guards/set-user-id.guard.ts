@@ -1,9 +1,9 @@
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { Req } from 'src/utils/types/request';
-import { parseJwt } from 'src/utils/helpers/jwt';
+import { Req } from '../utils/types/request';
+import { parseJwt } from '../utils/helpers/jwt';
 import { JwtService } from '@nestjs/jwt';
-import { Payload } from 'src/auth/auth.types';
+import { Payload } from '../auth/auth.types';
 
 @Injectable()
 export class SetUserIdGuard implements CanActivate {

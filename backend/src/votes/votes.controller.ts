@@ -1,11 +1,11 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Req, UseGuards } from '@nestjs/common';
 import { VotesService } from './votes.service';
 import { CreateVoteDto } from './dto/create-vote.dto';
-import { Roles } from 'src/roles/roles.decorator';
-import { Role } from 'src/roles/role.enum';
-import { Req as Request } from 'src/utils/types/request';
+import { Roles } from '../roles/roles.decorator';
+import { Role } from '../roles/role.enum';
+import { Req as Request } from '../utils/types/request';
 import { ApiBearerAuth } from '@nestjs/swagger';
-import { SetUserIdGuard } from 'src/guards/set-user-id.guard';
+import { SetUserIdGuard } from '../guards/set-user-id.guard';
 
 @Controller('votes')
 export class VotesController {

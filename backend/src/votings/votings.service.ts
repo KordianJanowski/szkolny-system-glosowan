@@ -4,8 +4,8 @@ import { UpdateVotingDto } from './dto/update-voting.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Voting } from './entities/voting.entity';
 import { Repository } from 'typeorm';
-import { VotesService } from 'src/votes/votes.service';
-import { Vote } from 'src/votes/entities/vote.entity';
+import { VotesService } from '../votes/votes.service';
+import { Vote } from '../votes/entities/vote.entity';
 
 @Injectable()
 export class VotingsService {
@@ -22,7 +22,7 @@ export class VotingsService {
 
   async findOne(id: number): Promise<Voting> {
     const voting = await this.votingRepository.findOne({ where: { id }, relations: { votes: true } });
-    
+
     if (voting.is_visible_before_voting_end || voting.expiration_time < Number(new Date())) {
       return voting
     }

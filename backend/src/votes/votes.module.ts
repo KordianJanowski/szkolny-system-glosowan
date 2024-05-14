@@ -3,8 +3,8 @@ import { VotesService } from './votes.service';
 import { VotesController } from './votes.controller';
 import { Vote } from './entities/vote.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsersModule } from 'src/users/users.module';
-import { VotingsModule } from 'src/votings/votings.module';
+import { UsersModule } from '../users/users.module';
+import { VotingsModule } from '../votings/votings.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Vote]), forwardRef(() => VotingsModule), UsersModule],

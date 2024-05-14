@@ -1,4 +1,4 @@
-import { Role } from "src/roles/role.enum"
+import { Role } from "../roles/role.enum"
 
 export interface Payload {
   sub: number

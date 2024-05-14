@@ -2,8 +2,8 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { VotingsService } from './votings.service';
 import { CreateVotingDto } from './dto/create-voting.dto';
 import { UpdateVotingDto } from './dto/update-voting.dto';
-import { Roles } from 'src/roles/roles.decorator';
-import { Role } from 'src/roles/role.enum';
+import { Roles } from '../roles/roles.decorator';
+import { Role } from '../roles/role.enum';
 import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('votings')
