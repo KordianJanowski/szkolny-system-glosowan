@@ -31,7 +31,7 @@ const VotingPage: React.FC = () => {
       title: voting[2],
       content: voting[3],
       options: voting[1],
-      expiration_time: Number(voting[4])
+      expiration_time: Number(voting[4]),
     })
 
     const countedChartData = countAndSort(votes.map((vote) => Number(vote[1])), voting[1].length - 1)
