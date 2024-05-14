@@ -1,4 +1,4 @@
-import { Voting } from "../votings/entities/voting.entity";
+import { Voting } from "../../votings/entities/voting.entity";
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()

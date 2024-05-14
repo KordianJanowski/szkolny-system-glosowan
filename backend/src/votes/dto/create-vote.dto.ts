@@ -1,5 +1,5 @@
 import { Max, Min } from "class-validator"
-import { Voting } from "../votings/entities/voting.entity"
+import { Voting } from "../../votings/entities/voting.entity"
 
 export class CreateVoteDto {
   option: number
