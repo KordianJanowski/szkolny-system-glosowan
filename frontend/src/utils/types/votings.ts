@@ -6,4 +6,5 @@ export interface Voting {
   expiration_time: number
   created_at?: string
   votes?: string[]
+  is_visible_before_voting_end: boolean
 }
