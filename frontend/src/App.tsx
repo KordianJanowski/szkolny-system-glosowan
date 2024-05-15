@@ -17,7 +17,7 @@ export default function App() {
     navigate('/home')
     setAccount(Cookies.get('account') ?? '')
 
-    if(!ethereum) return
+    // if(!ethereum) return
 
     ethereum.on('accountsChanged', function (accounts: string[]) {
       Cookies.set('account', accounts[0]);
