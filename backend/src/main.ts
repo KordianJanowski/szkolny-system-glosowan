@@ -4,7 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors();
+  app.enableCors({ origin: ["https://szkolny-system-glosowan.vercel.app/"] });
 
   const config = new DocumentBuilder()
     .setTitle('Voting system')
