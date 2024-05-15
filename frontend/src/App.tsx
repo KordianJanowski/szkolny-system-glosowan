@@ -16,6 +16,9 @@ export default function App() {
   useEffect(() => {
     navigate('/home')
     setAccount(Cookies.get('account') ?? '')
+
+    if(!ethereum) return
+
     ethereum.on('accountsChanged', function (accounts: string[]) {
       Cookies.set('account', accounts[0]);
       setAccount(accounts[0]);
