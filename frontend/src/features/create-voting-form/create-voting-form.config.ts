@@ -5,6 +5,7 @@ export interface CreateVotingInputs {
   content: string
   options?: string | undefined
   expiration_time: string
+  is_visible_before_voting_end: boolean
 }
 
 export const getVotingFormSchema = (votingOptions:string[]) => {
@@ -26,7 +27,7 @@ export const getVotingFormSchema = (votingOptions:string[]) => {
         }
       }),
     expiration_time: yup.string()
-      .required("Wybierz czas wygaśnięcia")
+      .required("Wybierz czas wygaśnięcia"),
       // .test("Required", "Wybierz czas wygaśnięcia", (expiration_time) => {
       //   if(expiration_time) {
       //     return true
@@ -34,6 +35,8 @@ export const getVotingFormSchema = (votingOptions:string[]) => {
       //     return false
       //   }
       // })
+    is_visible_before_voting_end: yup.boolean()
+      .required("Wybierz ")
   });
 
   return createVotingFormSchema;
