@@ -20,7 +20,7 @@ const useCreateVotingForm = ({ type }: CreateVotingFormProps) => {
       ...voting,
       options: votingOptions,
       expiration_time: Number(new Date(voting.expiration_time)),
-      is_visible_before_voting_end: true
+      is_visible_before_voting_end: voting.is_visible_before_voting_end || false
     }
 
     try {

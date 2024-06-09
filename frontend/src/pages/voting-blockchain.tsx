@@ -67,10 +67,13 @@ const VotingPage: React.FC = () => {
         </div>
         <hr className='mt-8 mb-8' />
         {
-          voting.id && !blockchainVotingIds.includes(voting.id) ?
-            <VotingForm voting={voting} type='blockchain' />
+          new Date(+voting.expiration_time + 86400000) > new Date() ?
+            voting.id && !blockchainVotingIds.includes(voting.id) ?
+              <VotingForm voting={voting} type='blockchain' />
+            :
+              <p className='text-2xl font-bold text-red-500'>Oddałeś już głos w tym głosowaniu!</p>
           :
-            <p className='text-2xl font-bold text-red-500'>Oddałeś już głos w tym głosowaniu!</p>
+          <p className='text-2xl font-bold text-red-500'>Głosowanie zostało zakończone!</p>
         }
         <hr className='mt-8 mb-2' />
         <p className='text-lg text-gray-500'>W każdym głosowaniu można oddać głos tylko jeden raz</p>

@@ -30,10 +30,8 @@ const useVotingForm = ({ voting, type }: Props) => {
       user?.votingsIds.push(voting.id)
       Cookies.set('user', JSON.stringify(user), { expires: 7 })
     } finally {
-      setLoading(false)
+      window.location.reload()
     }
-
-
   }
 
   return {

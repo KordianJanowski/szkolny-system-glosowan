@@ -59,10 +59,13 @@ const VotingPage: React.FC = () => {
         </div>
         <hr className='mt-8 mb-8' />
         {
-          voting.id && !user?.votingsIds.includes(voting.id) ?
-            <VotingForm voting={voting} type='default' />
+          new Date(+voting.expiration_time + 86400000) > new Date() ?
+            voting.id && !user?.votingsIds.includes(voting.id) ?
+              <VotingForm voting={voting} type='default' />
+            :
+              <p className='text-2xl font-bold text-red-500'>Oddałeś już głos w tym głosowaniu!</p>
           :
-            <p className='text-2xl font-bold text-red-500'>Oddałeś już głos w tym głosowaniu!</p>
+          <p className='text-2xl font-bold text-red-500'>Głosowanie zostało zakończone!</p>
         }
         <hr className='mt-8 mb-2' />
         <p className='text-lg text-gray-500'>W każdym głosowaniu można oddać głos tylko jeden raz</p>
@@ -78,20 +81,24 @@ const VotingPage: React.FC = () => {
             />
             <p className='mt-2 text-2xl font-bold text-center text-gray-900'>Udostępnij głosowanie kodem QR</p>
           </div>
-          <div className='w-full lg:w-1/2'>
-            <Pie data={{
-              labels: [...voting.options],
-              datasets: [
-                {
-                  label: 'Głosy',
-                  data: chartData,
-                  backgroundColor: backgrounds,
-                  borderWidth: 1,
-                },
-              ],
-              }}
-            />
-          </div>
+          {
+            voting.is_visible_before_voting_end ?
+              <div className='w-full lg:w-1/2'>
+                <Pie data={{
+                  labels: [...voting.options],
+                  datasets: [
+                    {
+                      label: 'Głosy',
+                      data: chartData,
+                      backgroundColor: backgrounds,
+                      borderWidth: 1,
+                    },
+                  ],
+                  }}
+                />
+              </div>
+            : null
+          }
         </div>
       </div>
     </div>
